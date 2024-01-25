@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    :root {
+        --main-text-color: red;
+        --main-border-style: solid;
+        --space-xxs: 0.2rem;
+        --space-xs: 0.8rem;
+        --space-s: 1.2rem;
+        --space-m: 2rem;
+        --space-l: 3.5;
+        --space-xl: 5em;
+        --space-xxl: 8rem;
+        --font-size-s: 0.8rem;
+        --font-size-m: 1.2rem;
+        --font-size-l: 3rem;
+    }
+
+    .header {
+        padding: var(--space-s);
+        border: var(--space-xxs) var(--main-border-style) blue;
+        color: var(--main-text-color);
+        font-size: clamp(32px, var(--font-size-l), 80px);
+        height: 5rem;
+        width: 50%;
+        animation: font-slide 2s linear infinite;
+    }
+
+    .section {
+        padding: var(--space-m);
+        border: var(--space-xxs) var(--main-border-style) orange;
+        color: var(--main-text-color);
+        font-size: var(--font-size-s);
+    }
+
+    .footer {
+        padding: var(--space-s);
+        border: var(--space-xxs) var(--main-border-style) blue;
+        color: var(--main-text-color);
+        font-size: var(--font-size-m);
+        text-align: right;
+    }
+
+    @keyframes font-slide {
+        from {
+            text-align: start;
+        }
+
+        50% {
+            text-align: center;
+        }
+
+        to {
+            text-align: end;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .header {
+            animation: font-slide 2s linear infinite;
+        }
+    }
+    </style>
+</head>
+<body>
+<div class="header">Ceci est un header</div>
+
+<div class="section">Section 1</div>
+<div class="section">Section 2</div>
+
+<div class="footer">Ceci est un footer</div>
+</body>
+</html>
